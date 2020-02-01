@@ -28,7 +28,7 @@ public class PlayerMovement : PlayerData
     void HandleMovement(Vector2 direction)
     {
 
-        rigidbody.velocity = new Vector3(direction.x * moveSpeed, rigidbody.velocity.y, 0);
+        //rigidbody.velocity = new Vector3(direction.x * moveSpeed, rigidbody.velocity.y, 0);
 
         if(direction.x > 0)
         {
