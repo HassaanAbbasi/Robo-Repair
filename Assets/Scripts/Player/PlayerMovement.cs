@@ -17,7 +17,7 @@ public class PlayerMovement : PlayerData
     // Update is called once per frame
     void Update()
     {
-        if (!b_isDamageable)
+        if (b_isDamageable)
         {
             if (Input.GetKeyDown(KeyCode.G))
                 DamagePlayer();
@@ -36,7 +36,7 @@ public class PlayerMovement : PlayerData
     void HandleMovement(Vector2 direction)
     {
 
-        //rigidbody.velocity = new Vector3(direction.x * moveSpeed, rigidbody.velocity.y, 0);
+        rigidbody.velocity = new Vector3(direction.x * moveSpeed, rigidbody.velocity.y, 0);
 
         if(direction.x > 0)
         {

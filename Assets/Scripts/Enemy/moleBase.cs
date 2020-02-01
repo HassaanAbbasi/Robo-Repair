@@ -36,7 +36,7 @@ public class moleBase : Damageable
             float direction = (playerX - enemyX) / Mathf.Abs(playerX - enemyX);
             print(direction);
 
-            collision.rigidbody.AddForce(new Vector2(direction * 2, 15), ForceMode2D.Impulse);
+            collision.rigidbody.AddForce(new Vector2(direction * 10, 6), ForceMode2D.Impulse);
 
         }
         
