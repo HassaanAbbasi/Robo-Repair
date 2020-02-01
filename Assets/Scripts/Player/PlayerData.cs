@@ -14,7 +14,7 @@ public class PlayerData : MonoBehaviour
     public float moveSpeed = 10;
 
     [SerializeField]
-    protected List<PlayerUpgrade> upgrades = new List<PlayerUpgrade>();
+    protected List<PlayerUpgrade> upgrades;
 
     
 }
