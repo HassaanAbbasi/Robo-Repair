@@ -38,12 +38,17 @@ public class PlayerMovement : PlayerData
         {
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        if((Input.GetKeyDown(KeyCode.Space) || direction.y > 0.5f) && groundCheck.b_isGrounded )
+        if((Input.GetKeyDown(KeyCode.Space)) && groundCheck.b_isGrounded )
         {
             rigidbody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 
             rigidbody.velocity = new Vector3(rigidbody.velocity.x, Mathf.Min(rigidbody.velocity.y, maxJump), 0);
         }
 
+    }
+
+   public bool GetIsGrounded()
+    {
+        return groundCheck.b_isGrounded;
     }
 }
