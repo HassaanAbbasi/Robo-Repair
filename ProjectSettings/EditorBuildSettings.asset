@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StevenGym.unity
+    guid: 601c1d8559832ce4db55a16b2c2da0ea
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3cf1832cd4e6ded4983f1af0ebcff365
   m_configObjects: {}
