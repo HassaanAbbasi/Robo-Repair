@@ -9,12 +9,7 @@ public class JetPackUpgrade : PlayerUpgrade
     [SerializeField]
     protected float m_maxFuel = 2.0f;
     [SerializeField]
-    protected int maxJumps = 2;
-    [SerializeField]
     protected float forcePower = 100.0f;
-
-    protected bool canJump = true;
-    protected int jumpCount = 0;
 
     GameObject player;
     PlayerMovement playerMove;
@@ -29,16 +24,8 @@ public class JetPackUpgrade : PlayerUpgrade
 
     public override void UseUpgrade(int direction)
     {
-
-        if (Input.GetKeyDown(KeyCode.Space) && !playerMove.GetIsGrounded() && canJump)
-        {
+        if (Input.GetKeyDown(KeyCode.Space) && !playerMove.GetIsGrounded())
             ApplyForce();
-            jumpCount++;
-            if (jumpCount == maxJumps)
-            {
-                canJump = false;
-            } 
-        }
 
         if(playerMove.GetIsGrounded())
         {
@@ -46,11 +33,6 @@ public class JetPackUpgrade : PlayerUpgrade
             {
                 fuel = m_maxFuel;
             }
-            if(jumpCount > 0)
-            {
-                jumpCount = 0;
-            }
-            canJump = true;
         }
     }
 
