@@ -98,4 +98,9 @@ public class JetPackUpgrade : PlayerUpgrade
         fuel -= Time.deltaTime * fuelDepletionRate;
 
     }
+
+    public float GetFuelPercent()
+    {
+        return fuel/m_maxFuel;
+    }
  }
