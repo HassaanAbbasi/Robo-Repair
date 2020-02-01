@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : PlayerUpgrade
+public class MetalFistUpgrade : PlayerUpgrade
 {
     [SerializeField]
     protected float cooldown = 5.0f;
