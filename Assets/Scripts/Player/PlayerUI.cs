@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
@@ -23,15 +24,24 @@ public class PlayerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Image[] images = m_healthContainer.GetComponentsInChildren<Image>();
+        for(int i = 0; i < 3; i++)
+        {
+            if (i >= m_playerData.health)
+                images[i].enabled = false;
+            else
+                images[i].enabled = true;
+        }
+
         if (m_jetPack != null)
         {
-         //   if (m_fuelContainer.enabled == false)
-            //    m_fuelContainer.enabled = false;
+            if (!m_fuelContainer.activeSelf)
+                m_fuelContainer.SetActive(true);
             m_fuelBar.transform.localScale = new Vector3(Mathf.Clamp(m_jetPack.GetFuelPercent(), 0, 1), 1, 1);
         }
         else
         {
-           // m_fuelContainer.enabled = false;
+            m_fuelContainer.SetActive(false);
             m_jetPack = GetComponentInChildren<JetPackUpgrade>();
         }
     }

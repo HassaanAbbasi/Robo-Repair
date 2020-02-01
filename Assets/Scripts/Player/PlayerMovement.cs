@@ -9,6 +9,7 @@ public class PlayerMovement : PlayerData
     // Start is called before the first frame update
     void Start()
     {
+        base.Start();
         rigidbody = GetComponentInChildren<Rigidbody2D>();
         groundCheck = GetComponentInChildren<GroundCheck>();
     }
@@ -16,12 +17,19 @@ public class PlayerMovement : PlayerData
     // Update is called once per frame
     void Update()
     {
-        HandleMovement(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
-
-        foreach (PlayerUpgrade upgrade in upgrades)
+        if (!b_isDamageable)
         {
-            upgrade.UseUpgrade((int)transform.localScale.x);
+            if (Input.GetKeyDown(KeyCode.G))
+                DamagePlayer();
+
+            HandleMovement(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
+
+            foreach (PlayerUpgrade upgrade in upgrades)
+            {
+                upgrade.UseUpgrade((int)transform.localScale.x);
+            }
         }
+
     }
     
 
