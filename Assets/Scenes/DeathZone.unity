@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 183120417}
   - component: {fileID: 183120416}
   m_Layer: 5
-  m_Name: Backtomenu
+  m_Name: BackToMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -544,6 +544,8 @@ GameObject:
   - component: {fileID: 1369695323}
   - component: {fileID: 1369695322}
   - component: {fileID: 1369695321}
+  - component: {fileID: 1369695326}
+  - component: {fileID: 1369695325}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -634,6 +636,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1369695325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369695320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0d2c05020bed54b834a8b8e0b88821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playButton: {fileID: 183120416}
+  targetScene: MainMenu
+--- !u!114 &1369695326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1369695320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0d2c05020bed54b834a8b8e0b88821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playButton: {fileID: 1487017212}
+  targetScene: StevenGym
 --- !u!1 &1371674233
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +758,7 @@ GameObject:
   - component: {fileID: 1487017213}
   - component: {fileID: 1487017212}
   m_Layer: 5
-  m_Name: PlayAgain
+  m_Name: PlayAgainButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
