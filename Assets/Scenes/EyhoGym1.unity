@@ -1534,6 +1534,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CratePink
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 18fcd494ab71841d695135246693eb3a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 18fcd494ab71841d695135246693eb3a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 18fcd494ab71841d695135246693eb3a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10.83
@@ -1586,7 +1594,12 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.675
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5000000, guid: 18fcd494ab71841d695135246693eb3a, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5000000, guid: 18fcd494ab71841d695135246693eb3a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 18fcd494ab71841d695135246693eb3a, type: 3}
 --- !u!4 &2127004932 stripped
 Transform:
