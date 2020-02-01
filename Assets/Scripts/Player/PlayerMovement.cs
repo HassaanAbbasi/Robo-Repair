@@ -50,7 +50,7 @@ public class PlayerMovement : PlayerData
    public bool GetIsGrounded()
     {
         if(groundCheck)
-        return groundCheck.b_isGrounded;
+            return groundCheck.b_isGrounded;
 
         return false;
     }

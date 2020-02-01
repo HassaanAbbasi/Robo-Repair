@@ -16,5 +16,15 @@ public class PlayerData : MonoBehaviour
     [SerializeField]
     protected List<PlayerUpgrade> upgrades;
 
+    public void DamagePlayer()
+    {
+        health--;
+        if (health <= 0)
+        {
+            health = 0;
+            //DED
+        }
+    }
+
     
 }

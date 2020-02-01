@@ -30,8 +30,8 @@ public class moleBase : Damageable
         else if (collision.gameObject.tag == "player")
         {
             collision.gameObject.SendMessage("DamagePlayer");
-            collision.gameObject.GetComponentInChildren<Rigidbody2D>;
-            if ()
+            Rigidbody2D body = collision.gameObject.GetComponentInChildren<Rigidbody2D>();
+           
 
         }
     }

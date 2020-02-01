@@ -76,10 +76,7 @@ public class JetPackUpgrade : PlayerUpgrade
     }
 
 
-    //TO DO
-    // FIX AMOUNTS OF JUMPS
-    // ADD SLOW FALL
-    // ADD PARTICLE EFFECTS
+
     void ApplyForce()
     {
         if(fuel > 0)

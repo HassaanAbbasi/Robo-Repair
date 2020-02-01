@@ -4,26 +4,35 @@ using UnityEngine;
 
 public class PlayerUI : MonoBehaviour
 {
-    private PlayerData playerData;
-    private JetPackUpgrade jetPack;
+    private PlayerData m_playerData;
+    private JetPackUpgrade m_jetPack;
 
     [SerializeField]
-    private GameObject HealthContainer;
+    private GameObject m_healthContainer;
     [SerializeField]
-    private GameObject FuelContainer;
+    private GameObject m_fuelContainer;
     [SerializeField]
-    private GameObject fuelBar;
+    private GameObject m_fuelBar;
     // Start is called before the first frame update
     void Start()
     {
-        playerData = GetComponentInChildren<PlayerData>();
-        jetPack = GetComponentInChildren<JetPackUpgrade>();
+        m_playerData = GetComponentInChildren<PlayerData>();
+        m_jetPack = GetComponentInChildren<JetPackUpgrade>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (jetPack != null)
-            fuelBar.transform.localScale = new Vector3(Mathf.Clamp(jetPack.GetFuelPercent(), 0, 1), 1, 1);
+        if (m_jetPack != null)
+        {
+         //   if (m_fuelContainer.enabled == false)
+            //    m_fuelContainer.enabled = false;
+            m_fuelBar.transform.localScale = new Vector3(Mathf.Clamp(m_jetPack.GetFuelPercent(), 0, 1), 1, 1);
+        }
+        else
+        {
+           // m_fuelContainer.enabled = false;
+            m_jetPack = GetComponentInChildren<JetPackUpgrade>();
+        }
     }
 }

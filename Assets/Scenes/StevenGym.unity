@@ -1272,9 +1272,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 642b811d7f0fec644a3289517aaf783d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthContainer: {fileID: 1671233703}
-  FuelContainer: {fileID: 1729714443}
-  fuelBar: {fileID: 100398722}
+  m_healthContainer: {fileID: 1671233703}
+  m_fuelContainer: {fileID: 1729714443}
+  m_fuelBar: {fileID: 100398722}
 --- !u!4 &2097936036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8236690903998023859, guid: c07d8e9feeba6de499eaa0bc053750e3,
