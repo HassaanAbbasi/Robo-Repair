@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemyv3 : MonoBehaviour
+public class MoleV3 : moleBase
 {
     // Start is called before the first frame update
     void Start()

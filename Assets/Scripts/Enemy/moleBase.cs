@@ -27,12 +27,18 @@ public class moleBase : Damageable
             gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x * -1, 1, 1);
             StartCoroutine(Flash());
         }
-        else if (collision.gameObject.tag == "player")
+        else if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.SendMessage("DamagePlayer");
-            Rigidbody2D body = collision.gameObject.GetComponentInChildren<Rigidbody2D>();
-           
+
+            float enemyX = rigidbody.transform.position.x;
+            float playerX = collision.rigidbody.transform.position.x;
+            float direction = (playerX - enemyX) / Mathf.Abs(playerX - enemyX);
+            print(direction);
+
+            collision.rigidbody.AddForce(new Vector2(direction * 2, 15), ForceMode2D.Impulse);
 
         }
+        
     }
 }

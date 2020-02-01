@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerData : MonoBehaviour
+public class PlayerData : Damageable
 {
-    [SerializeField]
-    private float m_maxHeatlh = 100;
-    public float health = 100;
-
     public float maxJump = 10;
     public float jumpForce = 100;
 
@@ -16,9 +12,18 @@ public class PlayerData : MonoBehaviour
     [SerializeField]
     protected List<PlayerUpgrade> upgrades;
 
+    protected void Start()
+    {
+        base.Start();
+    }
+
     public void DamagePlayer()
     {
+        if (!b_isDamageable)
+            return;
+
         health--;
+        StartCoroutine(Flash());
         if (health <= 0)
         {
             health = 0;
