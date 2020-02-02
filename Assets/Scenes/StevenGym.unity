@@ -989,7 +989,10 @@ MonoBehaviour:
   health: 3
   b_isDamageable: 1
   deathSound: {fileID: 0}
+  currentState: 0
   player: {fileID: 0}
+  startPosition: {x: 0, y: 0, z: 0}
+  hopDirection: 1
 --- !u!50 &1165765487
 Rigidbody2D:
   serializedVersion: 4
@@ -1019,7 +1022,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165765485}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.16, y: -0.83, z: 0}
+  m_LocalPosition: {x: -34.16, y: -0.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1464059321}
@@ -2380,6 +2383,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MoleV3
       objectReference: {fileID: 0}
+    - target: {fileID: 5374281298419270313, guid: 732e9f31fed0f514783104e39b29ef85,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5374281298419270318, guid: 732e9f31fed0f514783104e39b29ef85,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2444,27 +2452,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2062804604, guid: c07d8e9feeba6de499eaa0bc053750e3, type: 3}
-      propertyPath: m_healthContainer
-      value: 
-      objectReference: {fileID: 1671233703}
-    - target: {fileID: 2062804604, guid: c07d8e9feeba6de499eaa0bc053750e3, type: 3}
-      propertyPath: m_fuelContainer
-      value: 
-      objectReference: {fileID: 1729714443}
-    - target: {fileID: 2062804604, guid: c07d8e9feeba6de499eaa0bc053750e3, type: 3}
-      propertyPath: m_fuelBar
-      value: 
-      objectReference: {fileID: 100398722}
-    - target: {fileID: 3212027252809405333, guid: c07d8e9feeba6de499eaa0bc053750e3,
+    - target: {fileID: 8236690904685129033, guid: c07d8e9feeba6de499eaa0bc053750e3,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6339285784430254337, guid: c07d8e9feeba6de499eaa0bc053750e3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
+      propertyPath: m_Name
+      value: PFB_Player
       objectReference: {fileID: 0}
     - target: {fileID: 8236690904685129032, guid: c07d8e9feeba6de499eaa0bc053750e3,
         type: 3}
@@ -2521,10 +2512,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8236690904685129033, guid: c07d8e9feeba6de499eaa0bc053750e3,
+    - target: {fileID: 2062804604, guid: c07d8e9feeba6de499eaa0bc053750e3, type: 3}
+      propertyPath: m_healthContainer
+      value: 
+      objectReference: {fileID: 1671233703}
+    - target: {fileID: 2062804604, guid: c07d8e9feeba6de499eaa0bc053750e3, type: 3}
+      propertyPath: m_fuelContainer
+      value: 
+      objectReference: {fileID: 1729714443}
+    - target: {fileID: 2062804604, guid: c07d8e9feeba6de499eaa0bc053750e3, type: 3}
+      propertyPath: m_fuelBar
+      value: 
+      objectReference: {fileID: 100398722}
+    - target: {fileID: 3212027252809405333, guid: c07d8e9feeba6de499eaa0bc053750e3,
         type: 3}
-      propertyPath: m_Name
-      value: PFB_Player
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8962589416829618882, guid: c07d8e9feeba6de499eaa0bc053750e3,
         type: 3}
@@ -2541,5 +2544,10 @@ PrefabInstance:
       propertyPath: m_fuelBar
       value: 
       objectReference: {fileID: 100398722}
+    - target: {fileID: 6339285784430254337, guid: c07d8e9feeba6de499eaa0bc053750e3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c07d8e9feeba6de499eaa0bc053750e3, type: 3}
