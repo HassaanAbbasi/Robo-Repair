@@ -77,6 +77,6 @@ public class GameController : MonoBehaviour
 
     public static void PlaySound (AudioClip sound)
     {
-        aSource.PlayOneShot(sound);
+        //aSource.PlayOneShot(sound);
     }
 }
