@@ -28,6 +28,7 @@ public class MetalFistUpgrade : PlayerUpgrade
     {
         if (Input.GetKeyDown(KeyCode.Q) && canPunch)
         {
+            print("test");
             canPunch = false;
             CheckWallBreak(direction);
         }

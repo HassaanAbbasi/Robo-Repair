@@ -6,6 +6,7 @@ public class moleBase : Damageable
 {
     protected Rigidbody2D rigidbody;
     protected int walk = 2;
+    [SerializeField]
     protected bool b_isStunned = false;
     [SerializeField]
     protected AudioClip deathSound;
