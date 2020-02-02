@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     private Button m_menuButton;
     [SerializeField]
     private Button m_exitButton;
+    private static AudioSource aSource;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class GameController : MonoBehaviour
         m_helpButton.onClick.AddListener(Help);
         m_menuButton.onClick.AddListener(MainMenu);
         m_exitButton.onClick.AddListener(Exit);
+        aSource = GetComponentInChildren<AudioSource>();
     }
 
     // Update is called once per frame
@@ -71,5 +73,10 @@ public class GameController : MonoBehaviour
     void Exit()
     {
         Application.Quit();
+    }
+
+    public static void PlaySound (AudioClip sound)
+    {
+        aSource.PlayOneShot(sound);
     }
 }
