@@ -1646,11 +1646,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1378035504794214836}
     m_Modifications:
-    - target: {fileID: 8236690904685129033, guid: c07d8e9feeba6de499eaa0bc053750e3,
-        type: 3}
-      propertyPath: m_Name
-      value: PFB_Player
-      objectReference: {fileID: 0}
     - target: {fileID: 8236690904685129032, guid: c07d8e9feeba6de499eaa0bc053750e3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1706,6 +1701,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8236690904685129033, guid: c07d8e9feeba6de499eaa0bc053750e3,
+        type: 3}
+      propertyPath: m_Name
+      value: PFB_Player
+      objectReference: {fileID: 0}
     - target: {fileID: 2062804604, guid: c07d8e9feeba6de499eaa0bc053750e3, type: 3}
       propertyPath: m_healthContainer
       value: 
@@ -1738,6 +1738,11 @@ PrefabInstance:
       propertyPath: m_fuelBar
       value: 
       objectReference: {fileID: 817761059195610045}
+    - target: {fileID: 8236690904685129035, guid: c07d8e9feeba6de499eaa0bc053750e3,
+        type: 3}
+      propertyPath: maxJump
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c07d8e9feeba6de499eaa0bc053750e3, type: 3}
 --- !u!4 &817761059238954902 stripped

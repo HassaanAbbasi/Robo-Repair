@@ -8,7 +8,7 @@ public class GroundCheck : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "Ground")
+        if(other.gameObject.tag == "Ground" || other.gameObject.tag == "Wall")
         {
             b_isGrounded = true;
         }
@@ -25,7 +25,8 @@ public class GroundCheck : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Ground")
+
+        if (other.gameObject.tag == "Ground" || other.gameObject.tag == "Wall")
         {
             b_isGrounded = false;
         }

@@ -55,7 +55,15 @@ public class PlayerMovement : PlayerData
 
     }
 
-   public bool GetIsGrounded()
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        string otherTag = col.gameObject.tag;
+        if (otherTag == "Environment")
+        {
+            this.gameObject.SendMessageUpwards("DamagePlayer");
+        }
+    }
+    public bool GetIsGrounded()
     {
         if(groundCheck)
             return groundCheck.b_isGrounded;
