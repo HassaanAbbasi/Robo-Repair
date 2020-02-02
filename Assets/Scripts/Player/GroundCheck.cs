@@ -15,9 +15,11 @@ public class GroundCheck : MonoBehaviour
         else if(other.gameObject.tag == "Enemy")
         {
             float dist = transform.position.y - other.gameObject.transform.position.y;
-            if(dist >= 0.4f)
+            if (dist >= 0.4f)
+            {
                 other.attachedRigidbody.gameObject.SendMessage("TakeDamage");
-           
+            }
+
         }
     }
 
