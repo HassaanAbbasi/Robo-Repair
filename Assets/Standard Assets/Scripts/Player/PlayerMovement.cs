@@ -27,8 +27,6 @@ public class PlayerMovement : PlayerData
     {
         if (b_isDamageable && !GameController.b_isPaused)
         {
-            if (Input.GetKeyDown(KeyCode.G))
-                DamagePlayer();
 
             HandleMovement(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
 

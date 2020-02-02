@@ -5,7 +5,7 @@ using UnityEngine;
 public class moleBase : Damageable
 {
     protected Rigidbody2D rigidbody;
-    protected int walk = 2;
+    protected float walk = 2;
     [SerializeField]
     protected bool b_isStunned = false;
     [SerializeField]
@@ -13,6 +13,8 @@ public class moleBase : Damageable
     // Start is called before the first frame update
     protected new void Start()
     {
+
+        walk *= transform.localScale.x;
         base.Start();
         rigidbody = GetComponentInChildren<Rigidbody2D>();
     }
@@ -32,11 +34,11 @@ public class moleBase : Damageable
         {
 
         }
-        else if (collision.gameObject.tag == "Wall")
+        else if (collision.gameObject.tag == "Wall" || collision.gameObject.tag == "Enemy")
         {
             walk = walk * -1;
             gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x * -1, 1, 1);
-            StartCoroutine(Flash());
+
         }
         else if (collision.gameObject.tag == "Player")
         {

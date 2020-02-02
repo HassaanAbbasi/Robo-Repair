@@ -69,11 +69,11 @@ public class DrillMole : moleBase
 
     void hop()
     {
-        if (rigidbody.transform.position.y >= -0.36)
+        if (rigidbody.transform.position.y >= -0.04)
         {
             hopDirection = -1;
         }
-        else if (rigidbody.transform.position.y <= -0.65)
+        else if (rigidbody.transform.position.y <= -0.42)
         {
             hopDirection = 1;
             if (currentState == DrillState.DS_CHARGE)

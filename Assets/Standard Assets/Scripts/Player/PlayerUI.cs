@@ -14,6 +14,12 @@ public class PlayerUI : MonoBehaviour
     private GameObject m_fuelContainer;
     [SerializeField]
     private GameObject m_fuelBar;
+    [SerializeField]
+    private Image one;
+    [SerializeField]
+    private Image two;
+    [SerializeField]
+    private Image three;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,13 +30,31 @@ public class PlayerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Image[] images = m_healthContainer.GetComponentsInChildren<Image>();
-        for(int i = 0; i < 3; i++)
+        one.enabled = false;
+        two.enabled = false;
+        three.enabled = false;
+
+        switch (m_playerData.health)
         {
-            if (i >= m_playerData.health)
-                images[i].enabled = false;
-            else
-                images[i].enabled = true;
+            case 3:
+                three.enabled = true;
+                two.enabled = true;
+                one.enabled = true;
+                break;
+
+            case 2:
+                two.enabled = true;
+                one.enabled = true;
+                break;
+
+            case 1:
+                one.enabled = true;
+                break;
+
+                break;
+
+            default:
+                break;
         }
 
         if (m_jetPack != null)

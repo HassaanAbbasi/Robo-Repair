@@ -5,6 +5,8 @@ using UnityEngine;
 public class MoleV3 : MonoBehaviour
 {
     [SerializeField]
+    protected AudioClip deathSound;
+    [SerializeField]
     private Transform socket;
     [SerializeField]
     private GameObject projectile;
@@ -55,4 +57,9 @@ public class MoleV3 : MonoBehaviour
         StartCoroutine(Reload());
     }
 
+    public void TakeDamage()
+    {
+        GameController.PlaySound(deathSound);
+        Destroy(gameObject);
+    }
 }

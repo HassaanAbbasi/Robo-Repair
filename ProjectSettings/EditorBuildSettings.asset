@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 3cf1832cd4e6ded4983f1af0ebcff365
+  - enabled: 1
     path: Assets/Scenes/EyhoGym1.unity
     guid: 7957003043313694586e8cf473373091
   - enabled: 1
     path: Assets/Scenes/DeathZone.unity
     guid: 87297eaa8433e71469ccc5a6f4a15055
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 3cf1832cd4e6ded4983f1af0ebcff365
   m_configObjects: {}
