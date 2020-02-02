@@ -5,7 +5,7 @@ using UnityEngine;
 public class moleBase : Damageable
 {
     protected Rigidbody2D rigidbody;
-    protected int walk = -2;
+    protected int walk = 2;
     protected bool b_isStunned = false;
     [SerializeField]
     protected AudioClip deathSound;
