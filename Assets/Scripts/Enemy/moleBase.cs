@@ -10,14 +10,14 @@ public class moleBase : Damageable
     [SerializeField]
     protected AudioClip deathSound;
     // Start is called before the first frame update
-    void Start()
+    protected new void Start()
     {
         base.Start();
         rigidbody = GetComponentInChildren<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         if(!b_isStunned)
             rigidbody.velocity = new Vector3(walk, rigidbody.velocity.y, 0);
