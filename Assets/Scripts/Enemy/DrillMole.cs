@@ -15,8 +15,9 @@ public class DrillMole : moleBase
     
     [SerializeField]
     protected DrillState currentState = DrillState.DS_HOP;
-
-    protected SpriteRenderer sprite;
+    [SerializeField]
+    protected AudioSource alertSound;
+    protected SpriteRenderer exSprite;
     [SerializeField]
     protected GameObject player;
     [SerializeField]
@@ -31,6 +32,7 @@ public class DrillMole : moleBase
         rigidbody = GetComponentInChildren<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         startPosition = gameObject.transform.position;
+        alertSound = GetComponentInChildren<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,8 +44,11 @@ public class DrillMole : moleBase
             case DrillState.DS_HOP:
                 hop();
                 rigidbody.velocity = new Vector3(0, 5 * hopDirection, 0);
-                if (rigidbody.transform.position.x - player.transform.position.x < 6)
+                if (rigidbody.transform.position.x - player.transform.position.x < 10)
+                {
                     currentState++;
+                    alertSound.Play();
+                }
                 break;
 
             case DrillState.DS_CHARGE:
@@ -85,12 +90,14 @@ public class DrillMole : moleBase
     {
         
         currentState = DrillState.DS_COUNT;
-        //rigidbody.transform.localScale = new Vector3(rigidbody.transform.localScale.x * -1, 1, 1);
+        rigidbody.transform.localScale = new Vector3(rigidbody.transform.localScale.x * -1, 1, 1);
+        GameObject.FindWithTag("Exclamation").GetComponentInChildren<SpriteRenderer>().enabled = true;
         yield return new WaitForSeconds(1);
-        rigidbody.velocity = new Vector3(-20, 0, 0);
+        GameObject.FindWithTag("Exclamation").GetComponentInChildren<SpriteRenderer>().enabled = false;
+        rigidbody.velocity = new Vector3(-30, 0, 0);
 
-        yield return new WaitForSeconds(0.5f);
-
+        yield return new WaitForSeconds(0.4f);
+        rigidbody.transform.localScale = new Vector3(rigidbody.transform.localScale.x * -1, 1, 1);
         currentState = DrillState.DS_RETURN;
     }
 
