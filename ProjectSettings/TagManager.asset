@@ -9,6 +9,7 @@ TagManager:
   - BreakableWall
   - Undefined
   - Enemy
+  - Exclamation
   layers:
   - Default
   - TransparentFX
