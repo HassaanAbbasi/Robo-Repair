@@ -21,7 +21,7 @@ public class StunGunUpgrade : PlayerUpgrade
     }
     public override void UseUpgrade(int direction)
     {
-        if(Input.GetKeyDown(KeyCode.Z) && numOfShots > 0)
+        if(Input.GetKeyDown(KeyCode.F) && numOfShots > 0)
         {
             ShootGun(direction);
         }

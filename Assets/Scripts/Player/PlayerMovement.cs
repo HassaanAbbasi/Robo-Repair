@@ -17,7 +17,7 @@ public class PlayerMovement : PlayerData
     // Update is called once per frame
     void Update()
     {
-        if (b_isDamageable)
+        if (b_isDamageable && !GameController.b_isPaused)
         {
             if (Input.GetKeyDown(KeyCode.G))
                 DamagePlayer();

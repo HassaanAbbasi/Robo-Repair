@@ -51,7 +51,6 @@ public class moleBase : Damageable
 
     public void TakeDamage()
     {
-        Debug.Log("DED");
         Destroy(gameObject);
     }
 
