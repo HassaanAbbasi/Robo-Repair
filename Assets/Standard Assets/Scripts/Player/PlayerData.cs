@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerData : Damageable
 {
@@ -27,7 +28,7 @@ public class PlayerData : Damageable
         if (health <= 0)
         {
             health = 0;
-            //DED
+            SceneManager.LoadScene("DeathZone");
         }
     }
 

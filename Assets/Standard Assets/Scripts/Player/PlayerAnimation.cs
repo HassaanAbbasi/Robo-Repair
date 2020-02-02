@@ -11,11 +11,21 @@ public class PlayerAnimation : MonoBehaviour
     private PlayerMovement player;
 
     [SerializeField]
+    private StunGunUpgrade stunGun;
+
+    [SerializeField]
     private Rigidbody2D playerRB;
 
     // Update is called once per frame
     void Update()
     {
         animator.SetFloat("MoveSpeed", Mathf.Abs(playerRB.velocity.x));
+
+        if(stunGun.shoot)
+        {
+
+            animator.SetTrigger("Shoot");
+            stunGun.shoot = false;
+        }
     }
 }

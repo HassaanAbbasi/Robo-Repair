@@ -6,6 +6,14 @@ public class PlayerMovement : PlayerData
 {
     protected Rigidbody2D rigidbody;
     protected GroundCheck groundCheck;
+
+    [SerializeField]
+    protected PlayerUpgrade stunGun;
+    [SerializeField]
+    protected PlayerUpgrade jetPack;
+    [SerializeField]
+    protected PlayerUpgrade gauntlet;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +70,11 @@ public class PlayerMovement : PlayerData
         {
             this.gameObject.SendMessageUpwards("DamagePlayer");
         }
+        if(otherTag == "PickUp")
+        {
+            AddPowerUp(col.gameObject.GetComponentInChildren<PickUp>().upgrade);
+            Destroy(col.gameObject);
+        }
     }
     public bool GetIsGrounded()
     {
@@ -70,4 +83,26 @@ public class PlayerMovement : PlayerData
 
         return false;
     }
+
+    public void AddPowerUp(int upgrade)
+    {
+        switch(upgrade)
+        {
+            case 1:
+                upgrades.Add(jetPack);
+                jetPack.gameObject.SetActive(true);
+                break;
+            case 2:
+                upgrades.Add(stunGun);
+                stunGun.gameObject.SetActive(true);
+                break;
+            case 3:
+                upgrades.Add(gauntlet);
+                gauntlet.gameObject.SetActive(true);
+                break;
+            default:
+                break;
+        }
+    }
+    
 }

@@ -32,8 +32,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8236690904284967510}
+  - {fileID: 8341895403359409308}
   m_Father: {fileID: 8236690904685129032}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5194817750546502954
 SpriteRenderer:
@@ -293,7 +294,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8236690904659766587}
-  - {fileID: 8341895403359409308}
   - {fileID: 5016274294886499515}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -376,7 +376,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 8236690904685129032}
+    m_TransformParent: {fileID: 5016274294886499515}
     m_Modifications:
     - target: {fileID: 2189810785715526782, guid: cb76d6a04f0c8df458354023cac01583,
         type: 3}
@@ -474,6 +474,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PFB_JetPack
+      objectReference: {fileID: 0}
+    - target: {fileID: 3165070794820875499, guid: 992dfaf91a34e16489c19456378f6199,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3165070794820875503, guid: 992dfaf91a34e16489c19456378f6199,
         type: 3}

@@ -15,6 +15,7 @@ public class StunGunUpgrade : PlayerUpgrade
     [SerializeField]
     private float speed = 10f;
 
+    public bool shoot = false;
     public void Start()
     {
         StartCoroutine(Reload());
@@ -35,6 +36,7 @@ public class StunGunUpgrade : PlayerUpgrade
         Destroy(obj, 30);
         body.velocity = transform.right * direction * speed;
         numOfShots--;
+        shoot = true;
 
     }
 

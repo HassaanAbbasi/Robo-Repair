@@ -11,38 +11,37 @@ public class MetalFistUpgrade : PlayerUpgrade
     [SerializeField]
     protected float wait = 0.1f;
 
-    bool canDestroy = false;
-    GameObject fist;
-    SpriteRenderer sprender;
+    protected bool canDestroy = false;
+    
+    [SerializeField]
+    protected SpriteRenderer sprender;
     //when player interacts with enemy type" breakable wall" && player pressing use metal fist button, destroy(wall)
 
     // Start is called before the first frame update
-    void Start()
-    {
-        fist = GameObject.Find("MetalGauntlet");
-        sprender = fist.GetComponent<SpriteRenderer>();
+    void Awake()
+    { 
         sprender.enabled = false;
     }
 
+    void Start()
+    {
+
+        sprender.enabled = false;
+    }
     public override void UseUpgrade(int direction)
     {
-        if (Input.GetKeyDown(KeyCode.Q) && canPunch)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            print("test");
+            Debug.Log("Punchu");
             canPunch = false;
             CheckWallBreak(direction);
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void CheckWallBreak(int direction)
     {
-        sprender.enabled = true;
+        if(sprender)
+            sprender.enabled = true;
         StartCoroutine(Punch(direction));
         //StartCoroutine(CooldownTimer());
     }
@@ -57,37 +56,37 @@ public class MetalFistUpgrade : PlayerUpgrade
     {
         if (direction > 0)
         {
-            Vector3 pos = fist.transform.position;
+            Vector3 pos = transform.position;
             yield return new WaitForSeconds(wait);
-            fist.transform.position = new Vector3(fist.transform.position.x - 0.1f, fist.transform.position.y, fist.transform.position.z);
+            transform.position = new Vector3(transform.position.x - 0.1f, transform.position.y, transform.position.z);
             yield return new WaitForSeconds(wait);
-            fist.transform.position = new Vector3(fist.transform.position.x + 0.3f, fist.transform.position.y, fist.transform.position.z);
+            transform.position = new Vector3(transform.position.x + 0.3f, transform.position.y, transform.position.z);
             canDestroy = true;
             yield return new WaitForSeconds(wait);
-            fist.transform.position = new Vector3(fist.transform.position.x - 0.2f, fist.transform.position.y, fist.transform.position.z);
+            transform.position = new Vector3(transform.position.x - 0.2f, transform.position.y, transform.position.z);
             canDestroy = false;
             sprender.enabled = false;
             StartCoroutine(CooldownTimer());
         }
         else if(direction < 0)
         {
-            Vector3 pos = fist.transform.position;
+            Vector3 pos = transform.position;
             yield return new WaitForSeconds(wait);
-            fist.transform.position = new Vector3(fist.transform.position.x + 0.1f, fist.transform.position.y, fist.transform.position.z);
+            transform.position = new Vector3(transform.position.x + 0.1f, transform.position.y, transform.position.z);
             yield return new WaitForSeconds(wait);
-            fist.transform.position = new Vector3(fist.transform.position.x -0.3f, fist.transform.position.y, fist.transform.position.z);
+            transform.position = new Vector3(transform.position.x -0.3f, transform.position.y, transform.position.z);
             canDestroy = true;
             yield return new WaitForSeconds(wait);
-            fist.transform.position = new Vector3(fist.transform.position.x + 0.2f, fist.transform.position.y, fist.transform.position.z);
+            transform.position = new Vector3(transform.position.x + 0.2f, transform.position.y, transform.position.z);
             canDestroy = false;
             sprender.enabled = false;
             StartCoroutine(CooldownTimer());
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "BreakableWall" && canDestroy)
+        if(collision.gameObject.tag == "Wall" && canDestroy)
         {
             Destroy(collision.gameObject);
         }

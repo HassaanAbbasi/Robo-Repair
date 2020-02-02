@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     public Button playButton;
-    public string targetScene = "StevenGym";
+    public string targetScene = "EyhoGym1";
     // Start is called before the first frame update
     void Start()
     {

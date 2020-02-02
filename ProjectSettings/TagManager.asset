@@ -10,6 +10,9 @@ TagManager:
   - Undefined
   - Enemy
   - Exclamation
+  - Environment
+  - wall
+  - PickUp
   layers:
   - Default
   - TransparentFX
