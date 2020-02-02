@@ -7,6 +7,8 @@ public class moleBase : Damageable
     protected Rigidbody2D rigidbody;
     protected int walk = -2;
     protected bool b_isStunned = false;
+    [SerializeField]
+    protected AudioClip deathSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,7 @@ public class moleBase : Damageable
 
     public void TakeDamage()
     {
+        GameController.PlaySound(deathSound);
         Destroy(gameObject);
     }
 
