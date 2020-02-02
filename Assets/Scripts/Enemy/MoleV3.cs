@@ -9,13 +9,11 @@ public class MoleV3 : MonoBehaviour
     [SerializeField]
     private GameObject projectile;
     [SerializeField]
-    private int numOfShots = 1;
+    private int numOfShots = 10000;
     [SerializeField]
     private float reloadTime = 3.0f;
     [SerializeField]
     private float speed = 10f;
-
-   /* protected GroundCheck groundCheck; */
 
     // Start is called before the first frame update
     void Start()
@@ -34,30 +32,16 @@ public class MoleV3 : MonoBehaviour
         GameObject playerPosition = GameObject.FindGameObjectWithTag("Player");
         GameObject obj = Instantiate<GameObject>(projectile, socket.position, socket.rotation);
         Rigidbody2D body = obj.GetComponent<Rigidbody2D>();
-        Destroy(obj, 5);
+        
+        Destroy(obj, 30);
 
 
-        Vector3 pickaxeDirection = playerPosition.transform.position - transform.position + new Vector3(0, 4, 0);
+        Vector3 pickaxeDirection = playerPosition.transform.position - transform.position + new Vector3(1, 4, 0);
         pickaxeDirection = Vector3.Normalize(pickaxeDirection);
         body.AddForce(pickaxeDirection * speed, ForceMode2D.Impulse);
 
         numOfShots--;
-     
-        /*if (body.groundCheck.b_isGrounded)
-        {
-            Destroy(body);
-        }*/
-
     }
-
-    /*
-    public bool GetIsGrounded()
-    {
-        if (groundCheck)
-            return groundCheck.b_isGrounded;
-
-        return false;
-    }*/
 
     public IEnumerator Reload()
     {
@@ -70,4 +54,5 @@ public class MoleV3 : MonoBehaviour
         ThrowPickaxe();
         StartCoroutine(Reload());
     }
+
 }
