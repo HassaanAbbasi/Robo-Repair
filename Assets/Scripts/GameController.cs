@@ -3,22 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[SerializePrivateVariables]
 public class GameController : MonoBehaviour
 {
     public static bool b_isPaused = false;
 
+    [SerializeField]
     private GameObject pauseMenu;
 
+    [SerializeField]
     private Button m_resumeButton;
+    [SerializeField]
     private Button m_helpButton;
+    [SerializeField]
     private Button m_menuButton;
+    [SerializeField]
     private Button m_exitButton;
     private static AudioSource aSource;
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log(m_resumeButton);
+        Debug.Log(m_helpButton);
+        Debug.Log(m_menuButton);
+        Debug.Log(m_exitButton);
         m_resumeButton.onClick.AddListener(Resume);
         m_helpButton.onClick.AddListener(Help);
         m_menuButton.onClick.AddListener(MainMenu);
