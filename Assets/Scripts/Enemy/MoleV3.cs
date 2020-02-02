@@ -15,6 +15,8 @@ public class MoleV3 : MonoBehaviour
     [SerializeField]
     private float speed = 10f;
 
+   /* protected GroundCheck groundCheck; */
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,13 +37,27 @@ public class MoleV3 : MonoBehaviour
         Destroy(obj, 5);
 
 
-        Vector3 direction = playerPosition.transform.position - transform.position + new Vector3(0, 4, 0);
-        direction = Vector3.Normalize(direction);
-        body.AddForce(direction * speed, ForceMode2D.Impulse);
+        Vector3 pickaxeDirection = playerPosition.transform.position - transform.position + new Vector3(0, 4, 0);
+        pickaxeDirection = Vector3.Normalize(pickaxeDirection);
+        body.AddForce(pickaxeDirection * speed, ForceMode2D.Impulse);
 
         numOfShots--;
+     
+        /*if (body.groundCheck.b_isGrounded)
+        {
+            Destroy(body);
+        }*/
 
     }
+
+    /*
+    public bool GetIsGrounded()
+    {
+        if (groundCheck)
+            return groundCheck.b_isGrounded;
+
+        return false;
+    }*/
 
     public IEnumerator Reload()
     {
